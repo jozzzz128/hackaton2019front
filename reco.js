@@ -1,19 +1,34 @@
 'use strict'
+
+var comandos = [
+  ["eres","Soy un Asistente por voz creado para servir de guia a personas con discapacidades visuales, que entren a la plataforma Nauklistli"],
+  ["funciona","Funciono gracias a un API introducida por la W3C en el 2012, que integró el reconocimiento de voz de manera nativa en la web"],
+  ["detente","Cualquier cosa que necesites, no dudes en llamarme por mi nombre, y te ayudare en lo que me sea posible"],
+  ["cambiar página","¿A que página te deseas mover?"],
+  ["registro","Trasladandonos a Registro de Alumnos"],
+  ["agenda","Trasladandonos a la Agenda Personal"],
+  ["video","Trasladandonos al ultimo video Publicado"]
+];
+
 window.onload = function () {
 
   var textoComando = ["cli","please"];
   var banderaComando = true;
-
-  var comandos = [["dame la fecha","23 de marzo de 2019"]];
 
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = "es";
 
-    document.querySelector("#boton").addEventListener('click', function () {
-        //text1.focus();
-        recognition.start();
+    document.querySelector("#header .limiter ul .nau-start").addEventListener('click', function(){
+      recognition.start();
+      document.querySelector("#header .limiter ul .nau-start").style.display = "none";
+      document.querySelector("#header .limiter ul .nau-stop").style.display = "inline-block";
+    });
+    document.querySelector("#header .limiter ul .nau-stop").addEventListener('click', function(){
+      recognition.stop();
+      document.querySelector("#header .limiter ul .nau-start").style.display = "inline-block";
+      document.querySelector("#header .limiter ul .nau-stop").style.display = "none";
     });
     //recognition.start();
     //events
@@ -31,22 +46,40 @@ window.onload = function () {
             }
         }
 
-        text2.value = finalResult;
-        text1.value = interimResult;
+        //text2.value = finalResult;
+        //text1.value = interimResult;
 
         if(banderaComando){
-          if (interimResult.toLowerCase().indexOf(textoComando[0]) != -1 || interimResult.toLowerCase().indexOf(textoComando[1]) != -1){
-                hablaWeb("Estoy a tus ordenes");
-                banderaComando = false;
+          for(let i = 0; i < textoComando.length; i++){
+            if (interimResult.toLowerCase().indexOf(textoComando[i]) != -1){
+                  hablaWeb("Estoy a tus órdenes");
+                  banderaComando = false;
+            }
           }
         }
 
         else{
-          if (interimResult.toLowerCase().indexOf("dame la fecha") != -1){
-                hablaWeb("23 de marzo de 2019");
-                banderaComando = true;
+          for(let i = 0; i < comandos.length; i++){
+            if (interimResult.toLowerCase().indexOf(comandos[i][0]) != -1){
+                  hablaWeb(comandos[i][1]);
+                  if(comandos[i][0] != "cambiar página"){
+                  banderaComando = true;
+                  }
+                  if(comandos[i][0] == "registro"){
+                    setTimeout(function(){
+                      location.href='AlumnosForm.html';
+                    },4000);
+                  }else if (comandos[i][0] == "agenda") {
+                    setTimeout(function(){
+                      location.href='agendaOrg.html';
+                    },4000);
+                  }else if (comandos[i][0] == "video") {
+                    setTimeout(function(){
+                      location.href='videoSingle.html';
+                    },4000);
+                  }
+            }
           }
-
         }
 
 
@@ -65,5 +98,14 @@ function hablaWeb(param1){
     },500);
   }
 }
+
+/*
+document.addEventListener('visibilitychange', function(e) {
+    //console.log(document.hidden);
+    if(document.hidden){
+      recognition.stop();
+    }
+});
+*/
 
 //

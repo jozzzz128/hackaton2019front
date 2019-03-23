@@ -177,7 +177,7 @@ function scrollMap(){
     {
       autor: video1[6],
       fecha: [
-        [(video1[0]+"/"+video1[1]+"/"+video1[2]),[ [(video1[3]+":"+video1[4]),video1[5]] , ["43:54","tema"] ]],
+        [(video1[0]+"/"+video1[1]+"/"+video1[2]),[ [(video1[3]+":"+video1[4]),video1[5]]]],
         //[(video1[0]+"/"+video1[1]+"/"+video1[2]),[ [(video1[3]+":"+video1[4]),video1[5]] , ["43:54","tema"] ]]
         //["33/65/2019",[ ["33:54","tema"] , ["43:54","tema"] ]]
       ]
@@ -327,7 +327,7 @@ function scrollMap(){
   for (var i = 0; i < dic.length; i++) {
     let maestro = document.createElement("div");
     maestro.classList = "clase";
-    let divs = '<div class="maestro"><div class="thumb"></div><div class="content"><h2>'+(dic[i].autor)+'</h2><p>Materia que imparte</p></div></div> <div class="sesion-container"> <div class="sesiones">';
+    let divs = '<div class="maestro"><div class="thumb"></div><div class="content"><h2>'+(dic[i].autor.split(".")[0])+'</h2><p>Materia que imparte</p></div></div> <div class="sesion-container"> <div class="sesiones">';
     /*for (let j = 0; j < dic[i].fecha.length; j++){
       console.log(dic[i].fecha[j][0]);
 

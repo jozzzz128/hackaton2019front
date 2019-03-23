@@ -19,12 +19,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 header{
-  border-bottom: 1px solid #ccc;
   vertical-align: text-top;
+  position: relative;
+  overflow: hidden;
+  background: #bc794c;
 }
 
 header .icon-list{
-  color: #333;
+  color: #fff;
   text-decoration: none;
   font-size: 20px;
   padding: 20px 23px;
@@ -41,10 +43,15 @@ header .logo{
   display: inline-block;
 }
 
+header .nau-stop{
+  display: none;
+}
+
 header .logo .logotipo{
-font-size: 22px;
-font-weight: bold;
-margin-left: 20px;
+position: absolute;
+margin-left: 70px;
+height: 170px;
+top: -45px;
 }
 
 header ul{
@@ -55,7 +62,7 @@ header ul{
 header ul a{
   display: inline-block;
   padding: 20px;
-  color: #000;
+  color: #fff;
   box-sizing: border-box;
   text-decoration: none;
 }

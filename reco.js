@@ -66,16 +66,4 @@ function hablaWeb(param1){
   }
 }
 
-
-function gif(){
-    let tiempo = 2500;
-    for(var i = 0; i < text2.value.length; i++){
-        console.log(i);
-        setTimeout(function(){
-            document.getElementById("vid").innerHTML = '<img src="videos/'+text2.value[i]+'/'+text2.value[i]+'.gif"></img>';
-        },(tiempo * i));
-
-        //setTimeout(hola(),2000);
-    }
-
-}
+//

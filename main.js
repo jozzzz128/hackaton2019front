@@ -1,5 +1,10 @@
 'use strict'
 
+
+var videosArray = [
+  "23_03_2019_01_39_tema_autor.mp4",
+  "24_03_2019_01_40_tema_autor.mp4"
+];
 /*
 var texto = document.querySelector('#mitexto');
 var texto = document.querySelector('#mitexto');
@@ -145,4 +150,204 @@ if(allforms != null){
     inputs[i].addEventListener('focus',reducirLabel);
     inputs[i].addEventListener('blur',aumentarLabel);
   }
+}
+
+if(document.querySelector("#agenda") != null){
+  scrollMap();
+}
+
+function scrollMap(){
+
+  const agenda = document.querySelector("#agenda");
+  //var dias = [];
+  //var meses = [];
+  //var years = [];
+  //var fecha = [];
+
+  var dic = [];
+  //var hours = [];
+  //var minutes = [];
+  //var hora = [];
+  //var temas = [];
+  //var autores = [];
+
+  let video1 = videosArray[0].split("_");
+
+  dic.push(
+    {
+      autor: video1[6],
+      fecha: [
+        [(video1[0]+"/"+video1[1]+"/"+video1[2]),[ [(video1[3]+":"+video1[4]),video1[5]] , ["43:54","tema"] ]],
+        //[(video1[0]+"/"+video1[1]+"/"+video1[2]),[ [(video1[3]+":"+video1[4]),video1[5]] , ["43:54","tema"] ]]
+        //["33/65/2019",[ ["33:54","tema"] , ["43:54","tema"] ]]
+      ]
+    }
+  );
+  //dias.push(video1[0]);
+  //meses.push(video1[1]);
+  //years.push(video1[2]);
+  //hours.push(video1[3]);
+  //minutes.push(video1[4]);
+
+  for (var i = 0; i < dic.length; i++) {
+    let video = videosArray[i].split("_");
+
+    /*
+    //Dias
+    let banderaDias = true;
+    for (var j = 0; j < dias.length; j++) {
+      if(video[0] == dias[j]){
+        banderaDias = false;
+      }
+    }
+    if(banderaDias){
+      dias.push(video[0]);
+    }
+
+    //Meses
+    let banderaMeses = true;
+    for (var j = 0; j < meses.length; j++) {
+      if(video[1] == meses[j]){
+        banderaMeses = false;
+      }
+    }
+    if(banderaMeses){
+      meses.push(video[1]);
+    }
+
+
+    //Años
+    let banderaYears = true;
+    for (var j = 0; j < years.length; j++) {
+      if(video[2] == years[j]){
+        banderaYears = false;
+      }
+    }
+    if(banderaYears){
+      years.push(video[2]);
+    }
+    */
+
+    let banderaDic = true;
+
+    for (var j = 0; j < dic.length; j++) {
+      if(video[6] == dic[j].autor){
+        banderaDic = false;
+      }
+    }
+
+    if(banderaDic){
+
+      dic.push(
+        {
+          autor: video[6],
+          fecha: []
+          /*fecha: [
+            [   "",  [ [ "", "" , ["",""] ]  ]   ]  //,
+            //["33/65/2019",[ ["33:54","tema"] , ["43:54","tema"] ]]
+          ]*/
+        }
+      );
+
+      let banderaFecha = true;
+      for (var k = 0; k < dic.fecha.length; k++) {
+        if((video[0]+"/"+video[1]+"/"+video[2]) == dic.fecha[k][0]){
+          banderaFecha = false;
+        }
+      }
+      if(banderaFecha){
+          dic[dic.length - 1].fecha[fecha.length - 1].push([(video[0]+"/"+video[1]+"/"+video[2]),[]]);
+
+          let banderaHora = true;
+          for (var l = 0; l < dic[dic.length - 1][fecha.length - 1][1].length; l++) {
+            if((video[3]+":"+video[4]) == dic[dic.length - 1][fecha.length - 1][1][l]){
+              banderaHora = false;
+            }
+          }
+
+          if(banderaHora){
+            dic[dic.length - 1][fecha.length - 1][1].push([ (video[3]+":"+video[4]) , video[5] ]);
+          }
+
+      }
+
+    }
+
+    /*
+    //Hora
+    let banderaHours = true;
+    for (var j = 0; j < hours.length; j++) {
+      if(video[3] == hours[j]){
+        banderaHours = false;
+      }
+    }
+    if(banderaHours){
+      hours.push(video[3]);
+    }
+
+    //Minutos
+    let banderaMinutes = true;
+    for (var j = 0; j < minutes.length; j++) {
+      if(video[4] == minutes[j]){
+        banderaMinutes = false;
+      }
+    }
+    if(banderaMinutes){
+      minutes.push(video[4]);
+    }
+
+    //Temas
+    let banderaTemas = true;
+    for (var j = 0; j < temas.length; j++) {
+      if(video[5] == temas[j]){
+        banderaTemas = false;
+      }
+    }
+    if(banderaTemas){
+      temas.push(video[5]);
+    }
+
+    //Autores
+    let banderaAutores = true;
+    for (var j = 0; j < autores.length; j++) {
+      if(video[6] == autores[j]){
+        banderaAutores = false;
+      }
+    }
+    if(banderaAutores){
+      autores.push(video[6]);
+    }
+
+    */
+
+  }
+
+  //Construir
+
+  for (var i = 0; i < dic.length; i++) {
+    let maestro = document.createElement("div");
+    maestro.classList = "clase";
+    let divs = '<div class="maestro"><div class="thumb"></div><div class="content"><h2>'+(dic[i].autor)+'</h2><p>Materia que imparte</p></div></div> <div class="sesion-container"> <div class="sesiones">';
+    /*for (let j = 0; j < dic[i].fecha.length; j++){
+      console.log(dic[i].fecha[j][0]);
+
+      for(let k = 0; k < dic[i].fecha[j][1].length; k++){
+        //console.log(dic[i].fecha[j][1][k]);
+        divs += '<div class="sesion"><h3 class="fecha"> ' + dic[i].fecha[j][0] + '</h3><div class="cont"><ul>' +  '<a href="#">'+dic[i].fecha[j][1][k]+'<span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></a>';
+
+      }
+    }*/
+     for(let j = 0; j < dic[i].fecha.length; j++){
+       divs += '<div class="sesion"><h3 class="fecha">' + dic[i].fecha[j][0] + '</h3><div class="cont"><ul>';
+       for(let k = 0; k < dic[i].fecha[j][1].length; k++){
+         divs += '<a href="#">'+dic[i].fecha[j][1][k]+'<span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></a>';
+       }
+       divs += '</ul></div></div>';
+     }
+    divs += '</div></div>';
+    maestro.innerHTML = divs;
+    agenda.append(maestro);
+    console.log(dic);
+  }
+
 }

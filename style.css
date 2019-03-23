@@ -186,6 +186,10 @@ body #bodyContainer form .insert > .select .selectText{
   font-weight: bold;
 }
 
+body #bodyContainer form .insert > .select .conca{
+  font-weight: bold;
+}
+
 body #bodyContainer form .insert > .seleccion p{
   padding: 10px;
   box-sizing: border-box;

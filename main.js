@@ -74,7 +74,7 @@ function aumentarLabel(){
 function selectRadio(){
   let valor = this.innerHTML;
   this.parentNode.parentNode.querySelector('input[value="'+valor+'"]').checked = true;
-  this.parentNode.parentNode.querySelector(".select .selectText").innerHTML = "SELECCIONAR GRUPO: " + valor;
+  this.parentNode.parentNode.querySelector(".select .conca").innerHTML = ": " + valor;
   let theOptioner = this.parentNode.parentNode.querySelector(".select");
   theOptioner.removeEventListener('click',hideOptionsSelect);
   theOptioner.addEventListener('click',displayOptionsSelect);

@@ -55,6 +55,7 @@ header ul{
 header ul a{
   display: inline-block;
   padding: 20px;
+  color: #000;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -90,6 +91,11 @@ body .mask .middle span{
   box-sizing: border-box;
   padding-top: 0px;
   display: inline-block;
+}
+
+body #bodyContainer{
+  padding: 20px 0px;
+  box-sizing: border-box;
 }
 
 body #bodyContainer form{
@@ -200,4 +206,122 @@ body #bodyContainer form .insert > .seleccion p{
 
 body #bodyContainer form .insert > .seleccion p:hover{
   background: rgba(0, 0, 0, 0.01);
+}
+
+/*Video Vista*/
+
+#bodyContainer .limiter .container{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+#bodyContainer .limiter .principal{
+  width: calc(100% - 310px);
+  display: inline-block;
+}
+
+#bodyContainer .limiter aside{
+  width: 280px;
+  display: inline-block;
+}
+
+#bodyContainer .limiter aside .qr{
+  width: 100%;
+  height: calc(280px);
+  background: #191919;
+  border: 4px dashed #ccc;
+  display: inline-block;
+  background-position: center !important;
+  background-size: auto 100% !important;
+  background-repeat: no-repeat !important;
+}
+
+#bodyContainer .limiter .container .principal .video{
+  background: #000;
+}
+
+#bodyContainer .limiter .container .principal .video video{
+  width: 100%;
+  position: relative;
+  max-height: 550px;
+}
+
+#bodyContainer .limiter .container .principal .comments{
+  display: flex;
+  justify-content: space-around;
+}
+
+#bodyContainer .limiter .container .thumb{
+  width: 80px;
+  height: 80px;
+  border-radius: 360px;
+  background: #ccc;
+  margin: 20px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: auto 100% !important;
+  border: 5px solid #333;
+  display: inline-block;
+}
+
+#bodyContainer .limiter .container .principal .comments .comment-area{
+  width: calc(100% - 110px);
+}
+
+#bodyContainer .limiter .container .principal .comments .comment-area .tema-title{
+  font-weight: bold;
+  font-size: 22px;
+  padding: 20px 0px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+#bodyContainer .limiter .container .principal .comments .comment-area .tema-title .fecha{
+  color: #ccc;
+  font-size: 18px;
+  float: right;
+  font-weight: normal;
+  font-family: 'Righteous';
+}
+
+#bodyContainer .limiter .container .principal .comments .comment-area .description{
+  padding-bottom: 20px;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+#bodyContainer .limiter aside h3{
+  text-align: center;
+}
+
+#bodyContainer .limiter .commented{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: #333;
+}
+
+#bodyContainer .limiter .commented .thumb{
+  display: inline-block;
+  border: 4px solid #fff;
+}
+
+#bodyContainer .limiter .title{
+  padding: 20px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: bold;
+}
+
+#bodyContainer .limiter .commented .comment textarea{
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  outline: 0px;
+  width: 100%;
 }

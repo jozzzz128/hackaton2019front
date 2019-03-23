@@ -1,0 +1,199 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway';
+  font-weight: normal;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  font-family: 'Righteous';
+}
+
+.limiter{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header{
+  border-bottom: 1px solid #ccc;
+  vertical-align: text-top;
+}
+
+header .icon-list{
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 23px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+header .icon-list:hover{
+  background: rgba(0,0,0,0.02);
+}
+
+header .logo{
+  height: 60px;
+  display: inline-block;
+}
+
+header .logo .logotipo{
+font-size: 22px;
+font-weight: bold;
+margin-left: 20px;
+}
+
+header ul{
+  display: inline-block;
+  float: right;
+}
+
+header ul a{
+  display: inline-block;
+  padding: 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header ul a:hover{
+  background: rgba(0,0,0,0.02);
+}
+
+/*Portada*/
+body .mask{
+  width: 100%;
+  height: 300px;
+  background: #333;
+  display: table;
+}
+
+body .mask .middle{
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  text-align: center;
+}
+
+body .mask .middle h1{
+  font-size: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  padding-bottom: 0px;
+}
+
+body .mask .middle span{
+  padding: 10px;
+  box-sizing: border-box;
+  padding-top: 0px;
+  display: inline-block;
+}
+
+body #bodyContainer form{
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body #bodyContainer form .submit{
+  width: 100%;
+  max-width: 200px;
+  display: inline-block;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 18px;
+  background: #191919;
+  border: 0px;
+  color: #fff;
+  outline: 0px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+body #bodyContainer .insert{
+  position: relative;
+  margin: 10px 0px;
+}
+
+/*Contenido del sitio*/
+body #bodyContainer form .insert > label{
+  padding: 10px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-size: 16px;
+  top: 20px;
+  color: rgba(0,0,0,0.6);
+  font-weight: bolder;
+  z-index: 1000;
+  transition: 0.1s;
+  cursor: text;
+  position: absolute;
+}
+
+body #bodyContainer form .insert > input{
+  width: 100%;
+  display: inline-block;
+  padding: 10px 0px;
+  border: 0px;
+  outline: 0px;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+body #bodyContainer form .insert > .select{
+  padding: 10px 15px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-weight: bold;
+  outline: 0px;
+  font-size: 15px;
+  width: 100%;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  padding-left: 35px;
+  text-align: left;
+}
+
+body #bodyContainer form .insert input[type="radio"]{
+  display: none;
+}
+
+body #bodyContainer form .insert > .select .icon-keyboard_arrow_down{
+  font-size: 25px;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+}
+
+body #bodyContainer form .insert > .select .icon-x{
+  font-size: 18px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+}
+
+body #bodyContainer form .insert > .select .selectText{
+  font-weight: bold;
+}
+
+body #bodyContainer form .insert > .seleccion p{
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-top: 0px;
+}
+
+body #bodyContainer form .insert > .seleccion p:hover{
+  background: rgba(0, 0, 0, 0.01);
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alumnos Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Germania+One|Raleway|Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/style.css">
+    <script src="main.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+
+    <header>
+      <div class="limiter">
+        <div class="logo">
+          <a href="#" class="icon-list"></a>
+          <span class="logotipo">LOGO</span>
+        </div>
+        <ul>
+          <a href="#">Inicio</a>
+          <a href="#">Menu</a>
+          <a href="#">Item</a>
+          <a href="#">Item</a>
+          <a href="#" class="icon-search"></a>
+        </ul>
+      </div>
+    </header>
+
+    <div class="mask">
+      <div class="middle">
+        <h1>Registro de Alumno</h1>
+        <span>Llena los campos a continuación para Registar a un Alumno!</span>
+      </div>
+    </div>
+
+    <div id="bodyContainer">
+      <div class="limiter">
+        <form action="#" class="formAll">
+
+          <div class="insert">
+            <label for="AlumnoName">Nombre del Alumno: </label>
+            <input type="text" class="nombre" id="AlumnoName">
+          </div>
+
+          <div class="insert">
+            <a class="select"><span class="icon-keyboard_arrow_down"></span> <span class="selectText">Seleccionar grupo</span></a>
+            <div class="seleccion">
+              <!-- RADIO -->
+            </div>
+            <input type="radio" name="group" value="SOF11">
+            <input type="radio" name="group" value="SOF18">
+            <input type="radio" name="group" value="SOF11">
+            <input type="radio" name="group" value="SOF18">
+            <input type="radio" name="group" value="SOF11">
+            <input type="radio" name="group" value="SOF18">
+          </div>
+
+          <div class="insert">
+            <label for="AlumnoSemestre">Semestre: </label>
+            <input type="number" id="AlumnoSemestre">
+          </div>
+
+          <div class="insert">
+            <label for="AlumnoExpediente">Expediente: </label>
+            <input type="number" id="AlumnoExpediente">
+          </div>
+
+          <a class="submit" id="registro">Registrar</a>
+
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
